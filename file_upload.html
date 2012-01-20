@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Uploader</title>
+    <link rel='stylesheet' href="./style/file_upload.css"></link>
+  </head>
+  <body>
+    <div id="fc_container" class='fc-empty'>
+      <div class="fc-title">
+        <div class="fc-header">
+          Send pictures...
+        </div>
+        <div class="fc-subheader">
+          Drag your pictures to this box, or hit <span class='fc-show-chooser'>find pictures</span> to select them directly.
+          Then hit "send pictures" to send them to us.
+        </div>
+      </div>
+      
+      <div class="fc-error-message"></div>
+      
+      
+      <div class="fc-picture-dialog">
+        <div class="fc-info-bar">
+          <div class='fc-undo-banner fc-hidden'>
+            <span class=''>Picture removed. </span>
+            <span class='fc-link-button fc-undo-remove'>Undo removal</span>
+            <span class='fc-link-button fc-undo-all'>Undo <strong>all</strong> removals</span>
+          </div>
+
+          <span class='fc-count'>0</span> picture<span class='fc-count-sfx'>s</span>
+          <span class='fc-show-chooser'>find pictures...</span>
+          <input type='file' class='fc-hidden-fc' multiple='true'></input>
+        </div>
+        <div class='fc-instructions'>
+          Drag your images here, or hit <span class='fc-show-chooser'>find pictures</span> to select them directly.
+        </div>
+        <div class='fc-picture-grid'></div>
+        <div class='fc-controls'>
+          <div class="fc-activate-ctrls">
+            <div class="fc-do-upload fc-button">
+              send pictures...
+            </div>
+          </div>
+          <div class="fc-uploading-ctrls">
+            <div class="fc-current">
+              <div class="fc-current-upload">
+                <img src="" class='fc-current-upload-img' />
+              </div>
+              <div class="fc-current-progress fc-progress">
+                <div class="fc_sending_label fc-label">
+                  sending <span class='fc-sending-path'>~/pics/sea.jpg</span>
+                </div>
+                <div class="fc-progress-indicator" class="fc-sending-progress">
+                  <div class='fc-progress-fill'></div>
+                </div>
+              </div>
+            </div>
+            <div class="fc-all-uploads">
+              <div class="fc-label">sent</div>
+              <div class="fc-all-progress">
+                <span class="fc-pics-sent">2</span>/ 
+                <span class="fc-pics-count">4</span>
+              </div>
+              <div class='fc_stop_upload fc-button fc-cancel'>stop</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- hidden image preloads the spinner graphic -->
+    <img class='fc-preload-img' src="./images/bar_spinner.gif" width='75' height='6'></img>
+  </body>
+  
+  <script src="./script/file_upload.js" language="Javascript"></script>
+  <script>
+    // Keeping this global for easy debugging
+    var Uploader = null;
+  
+    function CreateFileUploader() {
+      var el = document.getElementById('fc_container');
+      if (el !== null) {
+        Uploader = J.CreateFileUploader(el);
+      } else {
+        J.Warn('Could not find file uploader element (with ID "fc_container")');
+      }
+    }
+  
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", CreateFileUploader);
+    }
+  </script>
+</html>
+  

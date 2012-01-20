@@ -1,0 +1,547 @@
+body
+{
+  background-color: #EAE9E1;
+}
+
+#fc_container
+{
+  width: 500px;
+  height: 500px;
+  background: url(../images/fc_bg.png) no-repeat top left;
+/*  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; */
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  border-radius: 8px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+  border: 1px solid #EAE9E1;
+  box-shadow: 0px 1px 8px rgba(0,0,0,0.6);
+  
+  overflow: hidden;
+}
+
+.fc-error-message
+{
+  height: 24px;
+  font-weight: bold;
+  background-color: rgb(224, 159, 162);
+  color: #600;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  text-shadow: 0px 1px 1px white;
+  text-overflow: ellipsis;
+  
+  display: none;
+}
+
+.fc-errored .fc-error-message
+{
+  display: block;
+}
+
+.fc-title
+{
+  height: 70px;
+  background-color: rgba(0,0,0,0.25);
+  text-shadow: 0px 1px 2px black;
+  padding: 8px;
+  -moz-box-sizing: padding-box;
+  box-sizing: border-box;
+  
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.fc-picture-dialog:before,
+.fc-controls:before
+{
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: transparent url(../images/ridge_hilight.svg) top left no-repeat;
+  background-size: 100% 100%;
+  content: "";
+}
+
+.fc-title .fc-header
+{
+  color: rgb(199, 178, 153);
+  font-size: 18px;
+}
+
+.fc-title .fc-subheader
+{
+  color: rgb(153, 134, 117);
+  font-size: 12px;
+}
+
+.fc-picture-dialog
+{
+  height: 430px;
+  position: relative;
+}
+
+.fc-errored .fc-picture-dialog
+{
+  height: 406px;
+}
+
+.fc-picture-dialog .fc-info-bar
+{
+  font-size: 12px;
+  text-align: right;
+  color: rgb(153, 134, 117);
+  padding: 8px;
+}
+
+.fc-count
+{
+  color: rgb(250, 224, 192);
+}
+
+.fc-show-chooser
+{
+
+  color: rgb(189, 204, 212);
+}
+
+.fc-info-bar .fc-show-chooser
+{
+  font-style: italic;
+  padding-left: 1em;
+}
+
+.fc-hidden
+{
+  display: none;
+}
+
+.fc-hidden-fc
+{
+  visibility: hidden;
+  width: 0px;
+}
+
+.fc-show-chooser:hover
+{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fc-controls
+{
+  position: absolute;
+  background-color: rgba(0,0,0,0.25);
+  height: 38px;
+  width: 100%;
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: none;
+  
+  -moz-transition: height linear 0.4s;
+  -webkit-transition: height linear 0.4s;
+  -o-transition: height linear 0.4s;
+  -ms-transition: height linear 0.4s;
+  transition: height linear 0.4s;
+
+}
+
+.fc-collecting .fc-controls
+{
+  height: 38px;
+  display: block;
+}
+
+.fc-sending .fc-controls
+{
+  height: 100px;
+  display: block;
+}
+
+.fc-sending .fc-activate-ctrls
+{
+  display: none;
+}
+
+.fc-collecting .fc-uploading-ctrls
+{
+  display: none;
+}
+
+
+.fc-button
+{
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background-image: url(../images/button.svg);
+  color: rgb(189, 204, 212);
+  font-size: 13px;
+  text-shadow: 0px 1px 1px black;
+}
+
+.fc-button.fc-cancel
+{
+  background-image: url(../images/cancel_button.svg);
+}
+
+.fc-do-upload
+{
+  float: right;
+  margin-top: 6px;
+  margin-right: 6px;
+  width: 173px;
+}
+
+.fc-button:hover
+{
+  background-image: url(../images/button_hover.svg);
+  cursor: pointer;
+}
+
+.fc-button.fc-cancel:hover
+{
+  background-image: url(../images/cancel_button_hover.svg);
+}
+
+.fc-current
+{
+  float: left;
+  height: 100px;
+  width: 383px;
+}
+
+.fc-all-uploads
+{
+  color: rgb(0, 102, 51);
+  float: right;
+  height: 100px;
+  width: 117px;
+  background-color: rgba(0,0,0,0.15);
+  border-bottom-right-radius: 8px;
+  text-align: center;
+  
+  -moz-box-sizing: padding-box;
+  box-sizing: border-box;
+  
+  padding-left: 4px;
+  padding-top: 8px;
+}
+
+.fc-all-uploads .fc-label
+{
+  font-size: 14px;
+}
+
+.fc-pics-sent
+{
+  color: rgb(51, 204, 102);
+  font-size: 28px;
+}
+.fc-pics-count
+{
+  font-size: 18px;
+}
+
+.fc-stop-upload
+{
+  margin-top: 4px;
+  width: 108px;
+  font-style: italic;
+}
+
+.fc-sending-path
+{
+  color: rgb(0, 102, 51);
+}
+
+.fc-picture-grid
+{
+  position: absolute;
+  top: 38px;
+  bottom: 0px;
+  width: 500px;
+  
+  overflow: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  -moz-transition: bottom linear 0.4s;
+  -webkit-transition: bottom linear 0.4s;
+  -o-transition: bottom linear 0.4s;
+  -ms-transition: bottom linear 0.4s;    
+  transition: bottom linear 0.4s;    
+}
+
+.fc-collecting .fc-picture-grid
+{
+  bottom: 38px;
+}
+
+.fc-sending .fc-picture-grid
+{
+  bottom: 100px;
+}
+
+.fc-undo-banner
+{
+  position: absolute;
+  top: 1px;
+  left: 0px;
+  
+  padding: 8px 20px 8px 16px;
+  
+  background-color: rgba(0,0,0,0.5);
+  
+  border-bottom-right-radius: 20px;
+}
+
+.fc-instructions
+{
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  background-color: rgba(0,0,0,0.2);  
+  border-radius: 20px;
+  color: rgb(153, 134, 117);
+  font-size: 13px;    
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -50px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  width: 300px;
+  
+  z-index: 10;
+  
+  display: none;
+  
+  text-shadow: 0px 1px 4px black;
+}
+
+.fc-empty .fc-instructions
+{
+  display: block;
+}
+
+.fc-link-button
+{
+  color: rgb(189, 204, 212);
+  cursor: pointer;
+  font-style: italic;
+}
+
+.fc-link-button:hover
+{
+  text-decoration: underline;
+}
+
+.fc-picture-grid.fc-drag-over
+{
+  border: 1px solid #999;
+  box-shadow: 0px 0px 28px #000 inset;
+  background: rgba(255, 255, 255, 0.1);
+  background: -moz-radial-gradient(50% 20%, circle cover, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  background: -webkit-radial-gradient(50% 50%, circle cover, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  background: -o-radial-gradient(50% 20%, circle cover, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  background: -ms-radial-gradient(50% 20%, circle cover, rgba(255, 255, 255, 0.1) 0%, transparent 100%);    
+}
+
+.fc-img-item
+{
+
+  /*
+    This stuff doesn't work in Mozilla - don't know
+    why.
+  display: -moz-inline-box;
+  display: -webkit-inline-box;
+  
+  -moz-box-align: baseline;
+  -moz-box-pack: center;
+  
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  */
+  
+  float: left;
+  text-align: center;
+  margin-top: 8px;
+  margin-left: 12px;
+  padding-top: 10px;
+  
+  width: 108px;
+  height: 108px;
+  
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  overflow: hidden;
+  
+  position: relative;
+}
+
+.fc-img-item.fc-selected
+{
+  background-color: rgb(32, 35, 36);
+  background: -moz-radial-gradient(50% 20%, circle cover, rgb(73, 79, 82) 0%, rgb(32, 35, 36) 100%);
+  background: -webkit-radial-gradient(50% 20%, circle cover, rgb(73, 79, 82) 0%, rgb(32, 35, 36) 100%);
+  background: -o-radial-gradient(50% 20%, circle cover, rgb(73, 79, 82) 0%, rgb(32, 35, 36) 100%);
+  background: -ms-radial-gradient(50% 20%, circle cover, rgb(73, 79, 82) 0%, rgb(32, 35, 36) 100%);      
+  
+  border-color: rgb(98, 106, 110);
+  
+  box-shadow: 0px 0px 2px black inset;
+}
+
+
+.fc-img-item .fc-remove
+{
+  display: none;
+  text-align: center;
+  color: rgb(224, 159, 162);
+
+  font-size: 13px;
+  font-style: italic;
+  
+  cursor: pointer;
+  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 6px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  
+  background: rgba(0,0,0,0.9);
+  background: -moz-linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: -o-linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: -ms-linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+  
+  -moz-transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  -ms-transition: opacity 1s linear;
+  transition: opacity 1s linear;  
+}
+
+.fc-img-item .fc-remove:hover
+{
+  text-decoration: underline;
+}
+
+.fc-img-item.fc-selected .fc-remove
+{
+  display: block;
+}
+
+.fc-img-item.fc-will-upload
+{
+  opacity: 0.2;
+}
+
+.fc-current-upload
+{
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 108px;
+}
+
+.fc-current .fc-progress
+{
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  float: left;
+/*  padding-left: 16px; */
+  padding-right: 16px;
+  width: 263px;
+  
+  position: relative;
+  top: 50%;
+}
+
+.fc-current-upload img,
+.fc-img-item img
+{
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+  border-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5) rgba(255, 255, 255, 0.3);
+  border-style: solid;
+  border-width: 1px;
+  width: 95px;
+}
+
+/*
+.fc-img-item img:hover
+{
+  box-shadow: 0px 8px 18px -2px rgba(0,0,0,0.6);
+}
+*/
+
+.fc-img-item:hover
+{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fc-img-item.fc-selected:hover
+{
+  background-color: transparent;
+}
+
+.fc-preload-img
+{
+  visibility: hidden;
+}
+
+/* Progress bars */
+.fc-progress
+{
+  color: rgb(34, 181, 115);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.fc-progress .fc-progress-indicator:before
+{
+  border-bottom: 1px solid rgb(0, 104, 55);
+  display: block;
+  content: ' ';
+  width: 100%;
+  height: 1px;
+  position: relative;
+  top: 2px;
+  z-index: 5;
+}
+
+.fc-progress-fill
+{
+  height: 3px;
+  border-radius: 2px;
+  background-color: #22b573;
+  width: 50%;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 0px 2px rgb(34, 181, 115);
+  
+  -moz-transition: width linear 0.2s;
+  -webkit-transition: width linear 0.2s;
+  -o-transition: width linear 0.2s;
+  -ms-transition: width linear 0.2s;
+  transition: width linear 0.2s;  
+}
